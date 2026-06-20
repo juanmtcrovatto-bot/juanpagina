@@ -76,7 +76,22 @@
     opacity: 0;
     animation: heroTextFadeIn 1.15s ease-out 0.25s forwards;
     will-change: opacity, transform, filter;
-  } </style>
+  } 
+
+
+  @media (max-width: 767px) {
+    .hero-slide-red {
+      object-position: 52% center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-slide-red {
+      object-position: 50% center;
+    }
+  }
+
+</style>
 </head>
 <body class="bg-background text-foreground overflow-x-hidden">
 
@@ -101,7 +116,7 @@
   <div id="hero-slideshow" class="absolute inset-0">
     <img src="images/juan-hero.jpg" alt="Juan Crovatto — Percussive Tech House DJ & Producer" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-top opacity-70" />
     <img src="images/hero-slide2.jpg" alt="" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" />
-    <img src="images/hero-slide3.jpg" alt="" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" />
+    <img src="images/hero-slide3.jpg" alt="" width="1600" height="1280" class="hero-slide hero-slide-red absolute inset-0 w-full h-full object-cover object-center opacity-0" />
   </div>
   <div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background"></div>
   <div class="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent"></div>
