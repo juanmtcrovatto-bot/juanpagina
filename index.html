@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Juan Crovatto — Percussive Tech House DJ & Producer</title>
+<meta name="description" content="Juan Crovatto. Percussive tech house from the underground. Latest releases, upcoming shows and booking enquiries." />
+<meta property="og:title" content="Juan Crovatto — Percussive Tech House" />
+<meta property="og:description" content="Percussive tech house from the underground. Releases, shows and booking." />
+<meta property="og:type" content="website" />
+<link rel="canonical" href="/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          background: 'oklch(0.13 0.01 30)',
+          foreground: 'oklch(0.96 0.005 90)',
+          card: 'oklch(0.17 0.012 30)',
+          'card-foreground': 'oklch(0.96 0.005 90)',
+          primary: 'oklch(0.68 0.22 35)',
+          'primary-foreground': 'oklch(0.13 0.01 30)',
+          secondary: 'oklch(0.22 0.015 30)',
+          'secondary-foreground': 'oklch(0.96 0.005 90)',
+          muted: 'oklch(0.22 0.015 30)',
+          'muted-foreground': 'oklch(0.62 0.02 60)',
+          accent: 'oklch(0.68 0.22 35)',
+          border: 'oklch(1 0 0 / 8%)',
+          ember: 'oklch(0.68 0.22 35)',
+          'ember-glow': 'oklch(0.78 0.20 50)',
+          bone: 'oklch(0.96 0.01 85)',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Space Grotesk', system-ui, sans-serif; background: oklch(0.13 0.01 30); color: oklch(0.96 0.005 90); -webkit-font-smoothing: antialiased; }
+  ::selection { background: oklch(0.68 0.22 35); color: oklch(0.13 0.01 30); }
+  .text-display { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.04em; line-height: 0.9; }
+  .text-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: 0.02em; text-transform: uppercase; font-size: 0.75rem; }
+  .grain { position: relative; }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.06;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode: overlay;
+  }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .marquee { animation: marquee 40s linear infinite; }
+  @keyframes pulseEmber { 0%,100%{opacity:.6} 50%{opacity:1} }
+  .pulse-ember { animation: pulseEmber 2s ease-in-out infinite; }
+  .shadow-ember { box-shadow: 0 20px 60px -20px color-mix(in oklab, oklch(0.68 0.22 35) 50%, transparent); }
+  .text-ember { color: oklch(0.68 0.22 35); }
+  .bg-ember { background-color: oklch(0.68 0.22 35); }
+  .hover\:bg-ember-glow:hover { background-color: oklch(0.78 0.20 50); }
+  .text-bone { color: oklch(0.96 0.01 85); }
+  .border-ember { border-color: oklch(0.68 0.22 35); }
+  .hover\:text-ember:hover { color: oklch(0.68 0.22 35); }
+  .hover\:border-ember:hover { border-color: oklch(0.68 0.22 35); }
+.bio-slide{transition:opacity 1s ease;}
+.hero-slide{transition:opacity 1.2s ease;}
+  @keyframes heroTextFadeIn {
+    from { opacity: 0; transform: translateX(-18px) translateY(10px); filter: blur(6px); }
+    to { opacity: 1; transform: translateX(0) translateY(0); filter: blur(0); }
+  }
+  .hero-copy-fade {
+    opacity: 0;
+    animation: heroTextFadeIn 1.15s ease-out 0.25s forwards;
+    will-change: opacity, transform, filter;
+  } </style>
+</head>
+<body class="bg-background text-foreground overflow-x-hidden">
+
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-border">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-ember pulse-ember"></span>
+      <span class="text-mono text-bone">JC / Crovatto</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-mono text-muted-foreground">
+      <a href="#bio" class="hover:text-ember transition-colors">01 · Bio</a>
+      <a href="#music" class="hover:text-ember transition-colors">02 · Música</a>
+      <a href="#shows" class="hover:text-ember transition-colors">03 · Shows</a>
+      <a href="#contact" class="hover:text-ember transition-colors">04 · Contacto</a>
+      <a href="#social" class="hover:text-ember transition-colors">05 · Social</a>
+    </nav>
+    <a href="#contact" class="text-mono px-4 py-2 bg-ember text-primary-foreground hover:bg-ember-glow transition-colors">Booking →</a>
+  </div>
+</header>
+
+<section id="top" class="relative min-h-screen w-full grain overflow-hidden">
+  <div id="hero-slideshow" class="absolute inset-0">
+    <img src="images/juan-hero.jpg" alt="Juan Crovatto — Percussive Tech House DJ & Producer" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-top opacity-70" />
+    <img src="images/hero-slide2.jpg" alt="" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" />
+    <img src="images/hero-slide3.jpg" alt="" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" />
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent"></div>
+  <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 pt-40 pb-24 min-h-screen flex flex-col justify-between">
+    <div class="flex items-center justify-between text-mono text-muted-foreground">
+      <span>· EST. 2016 / Buenos Aires</span>
+      <span class="hidden md:block">Lat -34.6037 / Lng -58.3816</span>
+      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ember pulse-ember"></span> On Tour 2026</span>
+    </div>
+    <div class="hero-copy-fade max-w-4xl -ml-4 md:-ml-10 lg:-ml-20 xl:-ml-28">
+      <p class="text-mono text-ember mb-6">// Percussive Tech House</p>
+      <img src="images/hero-logo.png" alt="Juan Crovatto" class="w-[82%] max-w-[720px] lg:max-w-[820px] xl:max-w-[880px] h-auto drop-shadow-[0_0_30px_rgba(255,106,26,0.18)]" />
+      <p class="mt-7 max-w-lg text-base text-muted-foreground leading-relaxed">Tambores, ácidos y un kick que no perdona. Sets para piso oscuro, soundsystems gordos y sesiones que terminan cuando sale el sol.</p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#music" class="text-mono px-6 py-4 bg-ember text-primary-foreground hover:bg-ember-glow transition-colors shadow-ember">▶ Escuchar último set</a>
+        <a href="#shows" class="text-mono px-6 py-4 border border-bone/30 text-bone hover:border-ember hover:text-ember transition-colors">Próximas fechas →</a>
+        <a href="https://instagram.com/juancrovatto" target="_blank" rel="noopener noreferrer" class="text-mono px-6 py-4 border border-bone/30 text-bone hover:border-ember hover:text-ember transition-colors inline-flex items-center gap-2">@juancrovatto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="border-y border-border bg-card py-6 overflow-hidden">
+  <div class="flex gap-12 marquee whitespace-nowrap" id="marquee"></div>
+</div>
+
+<section id="bio" class="relative py-32 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-2 text-mono text-ember">/ 01 — Bio</div>
+    <div class="lg:col-span-5">
+      
+<div class="relative w-full aspect-[4/5] overflow-hidden" id="bio-slideshow">
+  <img src="images/bio-slide1.jpg" class="bio-slide absolute inset-0 w-full h-full object-cover" />
+  <img src="images/bio-slide2.png" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
+  <img src="images/bio-slide3.jpg" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
+</div>
+
+    </div>
+    <div class="lg:col-span-5 flex flex-col justify-between gap-10">
+      <h2 class="text-display text-bone" style="font-size:clamp(2rem,5vw,4rem)">Una trayectoria construida en la <span class="text-ember">pista</span>.</h2>
+      <div class="space-y-5 text-muted-foreground leading-relaxed">
+        <p>Formado en <span class="text-bone">BPM Academy</span> y <span class="text-bone">La Juanita Studio</span>, Juan Crovatto consolidó su carrera presentándose en algunos de los clubes más destacados de la escena: Crobar, Club América, Moscú (ex Pacha), Morocco Main, Zegre, Piso 3, Galería, Caix y Groove.</p>
+        <p>Es DJ residente en <span class="text-bone">Lignée</span> y también se presentó en Roomie (Mar del Plata). Su trayectoria lo llevó además a Brasil, donde tocó en P12 y Jurerê Internacional.</p>
+        <div id="bio-more" class="hidden space-y-5">
+          <p>Participó en eventos de renombre como La Feria, La Playa, We Can y Dikey, y compartió cabina con referentes internacionales como Stefano Noferini, Héctor Couto, Bizza, Omar Svenson, Bruno Bona y Freenzy Music, además de destacados artistas nacionales como Muter, Silvestre, Franco BA, Super, Juan AR, Pinco y muchos otros.</p>
+          <p>Sus producciones recibieron el apoyo de grandes artistas internacionales como Yaya Tamango, Tomi Kesh, Dennis Cruz, Kidoo, Nacho Scoppa, Chapa Castelo, Waff, Freenzy Music, Tomás Bisquierra y Jay de Lys.</p>
+        </div>
+        <button id="bio-toggle" type="button" class="text-mono inline-flex items-center justify-center px-5 py-3 bg-ember text-primary-foreground hover:bg-ember-glow transition-colors shadow-ember mt-2">Mostrar más +</button>
+      </div>
+      <div class="grid grid-cols-3 border-t border-border pt-8">
+        <div><div class="text-display text-bone text-4xl">120+</div><div class="text-mono text-muted-foreground mt-2">Shows</div></div>
+        <div><div class="text-display text-bone text-4xl">14</div><div class="text-mono text-muted-foreground mt-2">Releases</div></div>
+        <div><div class="text-display text-bone text-4xl">9</div><div class="text-mono text-muted-foreground mt-2">Países</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="music" class="relative py-32 px-6 lg:px-10 bg-card border-y border-border">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="flex items-end justify-between mb-16 flex-wrap gap-6">
+      <div>
+        <div class="text-mono text-ember">/ 02 — Discografía</div>
+        <h2 class="text-display text-bone mt-4" style="font-size:clamp(2.5rem,6vw,5rem)">Releases &amp; <span class="text-ember">edits</span></h2>
+      </div>
+      <a href="https://soundcloud.com/juanmtcrovatto" target="_blank" rel="noopener noreferrer" class="text-mono text-bone border-b border-ember pb-1 hover:text-ember transition-colors">SoundCloud completo →</a>
+    </div>
+    <div class="max-w-4xl mx-auto">
+      <div class="border border-border overflow-hidden" style="background:#1a1a1a">
+        <iframe title="Juan Crovatto en SoundCloud" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/1533165044&color=%23ff6a1a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+      </div>
+      <div class="mt-6 border border-border" id="releases"></div>
+    </div>
+  </div>
+</section>
+
+<section id="shows" class="relative py-32 px-6 lg:px-10 grain">
+  <img src="images/crowd.jpg" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-15" />
+  <div class="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
+  <div class="relative max-w-[1400px] mx-auto">
+    <div class="mb-16">
+      <div class="text-mono text-ember">/ 03 — Tour 2026</div>
+      <h2 class="text-display text-bone mt-4" style="font-size:clamp(2.5rem,6vw,5rem)">Próximas <span class="text-ember">fechas</span></h2>
+    </div>
+    <div class="mb-20">
+      <div class="text-mono text-muted-foreground mb-4">Destacado — Studio Crobar x Elite Aniversario</div>
+      <div class="relative border border-border overflow-hidden">
+        <img src="images/flyer-crobar-elite.jpg" alt="Flyer Studio Crobar x Elite Aniversario — Max Ross B2B Juan Crovatto, 04.ABR.2026 en Crobar Club Buenos Aires" loading="lazy" class="w-full max-h-[70vh] object-contain bg-black/40" />
+        <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none"></div>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-px bg-border" id="shows-grid"></div>
+  </div>
+</section>
+
+<section id="contact" class="relative py-32 px-6 lg:px-10 bg-card border-t border-border">
+  <div class="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-2 text-mono text-ember">/ 04 — Contacto</div>
+    <div class="lg:col-span-10">
+      <h2 class="text-display text-bone" style="font-size:clamp(3rem,8vw,7rem)">¿Necesitás un<br/><span class="text-ember">closing set?</span></h2>
+      <p class="mt-8 max-w-2xl text-muted-foreground text-lg">Booking, rider técnico, hospitality y datos oficiales para contratar a Juan Crovatto.</p>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-px bg-border">
+        <a href="tel:+5493489622126" class="bg-background p-6 flex flex-col gap-2 hover:bg-secondary transition-colors group">
+          <span class="text-mono text-muted-foreground">Booking</span>
+          <span class="text-bone text-xl group-hover:text-ember transition-colors">+54 9 3489 62 2126 →</span>
+        </a>
+        <a href="mailto:juanmtcrovatto@gmail.com" class="bg-background p-6 flex flex-col gap-2 hover:bg-secondary transition-colors group">
+          <span class="text-mono text-muted-foreground">Email oficial</span>
+          <span class="text-bone text-xl group-hover:text-ember transition-colors">juanmtcrovatto@gmail.com →</span>
+        </a>
+        <a href="https://instagram.com/juancrovatto" target="_blank" rel="noopener noreferrer" class="bg-background p-6 flex flex-col gap-2 hover:bg-secondary transition-colors group">
+          <span class="text-mono text-muted-foreground">Instagram</span>
+          <span class="text-bone text-xl group-hover:text-ember transition-colors">@juancrovatto →</span>
+        </a>
+        <div class="bg-background p-6 flex flex-col gap-2">
+          <span class="text-mono text-muted-foreground">Base</span>
+          <span class="text-bone text-xl">Campana, Buenos Aires</span>
+        </div>
+      </div>
+
+      <div class="mt-12 grid lg:grid-cols-3 gap-px bg-border">
+        <div class="bg-background p-6">
+          <span class="text-mono text-ember">Rider técnico</span>
+          <ul class="mt-5 space-y-3 text-muted-foreground leading-relaxed">
+            <li><span class="text-bone">1</span> Mixer Pioneer DJM-A9</li>
+            <li><span class="text-bone">3</span> CDJ-3000 o superior</li>
+            <li><span class="text-bone">1</span> RMX-1000</li>
+            <li><span class="text-bone">2</span> monitores de cabina de alta gama + subwoofer</li>
+          </ul>
+        </div>
+
+        <div class="bg-background p-6">
+          <span class="text-mono text-ember">Hospitality</span>
+          <div class="mt-5 space-y-5 text-muted-foreground leading-relaxed">
+            <div>
+              <div class="text-bone font-semibold">Fuera de Buenos Aires</div>
+              <p>Vuelos y traslados. Hotel 3 estrellas o superior.</p>
+            </div>
+            <div>
+              <div class="text-bone font-semibold">En Buenos Aires</div>
+              <p>4 ingresos backstage y 5 ingresos VIP, sin cargo y sin límite de horario.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-background p-6">
+          <span class="text-mono text-ember">Consumo en cabina</span>
+          <ul class="mt-5 space-y-3 text-muted-foreground leading-relaxed">
+            <li><span class="text-bone">1</span> botella de Jägermeister</li>
+            <li><span class="text-bone">4</span> Red Bull</li>
+            <li><span class="text-bone">6</span> botellas de agua</li>
+            <li><span class="text-bone">4</span> latas de Coca-Cola</li>
+            <li><span class="text-bone">6</span> vasos de vidrio</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-wrap gap-6 text-mono text-muted-foreground">
+        <a href="#social" class="hover:text-ember">Ver redes sociales ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="social" class="relative py-28 px-6 lg:px-10 bg-background border-t border-border overflow-hidden">
+  <div class="absolute right-[-10%] top-[-20%] w-[42rem] h-[42rem] rounded-full blur-3xl opacity-20 pointer-events-none" style="background:radial-gradient(circle, oklch(0.68 0.22 35), transparent 65%);"></div>
+  <div class="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-10 relative z-10">
+    <div class="lg:col-span-2 text-mono text-ember">/ 05 — Social Media</div>
+    <div class="lg:col-span-10">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div>
+          <h2 class="text-display text-bone" style="font-size:clamp(2.8rem,7vw,6rem)">Social <span class="text-ember">Media</span>.</h2>
+          <p class="mt-5 max-w-2xl text-muted-foreground text-lg">Seguí a Juan Crovatto en sus plataformas oficiales y escuchá sus últimos sets, lanzamientos y novedades.</p>
+        </div>
+        <div class="text-mono text-muted-foreground">@JUANCROVATTO</div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border">
+        <a href="https://instagram.com/juancrovatto" target="_blank" rel="noopener noreferrer" class="bg-card p-6 min-h-40 flex flex-col justify-between hover:bg-secondary transition-colors group">
+          <span class="w-12 h-12 rounded-xl inline-flex items-center justify-center" style="background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);">
+            <svg viewBox="0 0 24 24" class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="17" cy="7" r="1"></circle></svg>
+          </span>
+          <div><div class="text-bone text-xl font-semibold group-hover:text-ember transition-colors">Instagram</div><div class="text-mono text-muted-foreground mt-2">Perfil oficial ↗</div></div>
+        </a>
+
+        <a href="#" class="bg-card p-6 min-h-40 flex flex-col justify-between hover:bg-secondary transition-colors group">
+          <span class="w-12 h-12 rounded-xl inline-flex items-center justify-center" style="background:#03ff8a;">
+            <svg viewBox="0 0 24 24" class="w-8 h-8 text-background" fill="currentColor"><path d="M7.6 19c-2.35 0-4.1-1.67-4.1-3.9 0-1.67 1.05-3.18 2.62-3.73l1.13-.4V4.5h3.75v8.1l-2.4.84c-.9.32-1.35.82-1.35 1.55 0 .68.5 1.13 1.25 1.13h5.1c1.33 0 2.35-.93 2.35-2.25 0-1.25-.95-2.2-2.33-2.2h-1.27V8.85h1.47c3.33 0 5.68 2.13 5.68 5.05 0 3.05-2.43 5.1-5.85 5.1H7.6z"/></svg>
+          </span>
+          <div><div class="text-bone text-xl font-semibold group-hover:text-ember transition-colors">Beatport</div><div class="text-mono text-muted-foreground mt-2">Música ↗</div></div>
+        </a>
+
+        <a href="https://www.youtube.com/@juancrovatto" target="_blank" rel="noopener noreferrer" class="bg-card p-6 min-h-40 flex flex-col justify-between hover:bg-secondary transition-colors group">
+          <span class="w-12 h-12 rounded-xl inline-flex items-center justify-center" style="background:#ff0000;">
+            <svg viewBox="0 0 24 24" class="w-8 h-8 text-white" fill="currentColor"><path d="M21.6 7.2s-.2-1.5-.8-2.1c-.8-.8-1.7-.8-2.1-.9C15.8 4 12 4 12 4s-3.8 0-6.7.2c-.4.1-1.3.1-2.1.9-.6.6-.8 2.1-.8 2.1S2.2 9 2.2 10.8v1.7c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.1c.8.8 1.9.8 2.4.9 1.8.2 6.4.2 6.4.2s3.8 0 6.7-.2c.4-.1 1.3-.1 2.1-.9.6-.6.8-2.1.8-2.1s.2-1.8.2-3.6v-1.7c0-1.8-.2-3.6-.2-3.6zM10.1 14.4V8.7l5.3 2.9-5.3 2.8z"/></svg>
+          </span>
+          <div><div class="text-bone text-xl font-semibold group-hover:text-ember transition-colors">YouTube</div><div class="text-mono text-muted-foreground mt-2">Videos ↗</div></div>
+        </a>
+
+        <a href="https://soundcloud.com/juanmtcrovatto" target="_blank" rel="noopener noreferrer" class="bg-card p-6 min-h-40 flex flex-col justify-between hover:bg-secondary transition-colors group">
+          <span class="w-12 h-12 rounded-xl inline-flex items-center justify-center" style="background:#ff5500;">
+            <svg viewBox="0 0 24 24" class="w-8 h-8 text-white" fill="currentColor"><path d="M6.2 17.5H4.8c-1.5 0-2.8-1.2-2.8-2.7 0-1.4 1.1-2.6 2.5-2.7.5-2.5 2.7-4.4 5.3-4.4 3 0 5.4 2.4 5.4 5.4v4.4h-9zm10.2 0v-4.3c0-1.3-.3-2.5-.9-3.5.4-.1.8-.2 1.2-.2 2.7 0 4.9 2.2 4.9 4.9s-2.2 3.1-4.9 3.1h-.3z"/></svg>
+          </span>
+          <div><div class="text-bone text-xl font-semibold group-hover:text-ember transition-colors">SoundCloud</div><div class="text-mono text-muted-foreground mt-2">Sets ↗</div></div>
+        </a>
+
+        <a href="#" class="bg-card p-6 min-h-40 flex flex-col justify-between hover:bg-secondary transition-colors group">
+          <span class="w-12 h-12 rounded-xl inline-flex items-center justify-center" style="background:#1ed760;">
+            <svg viewBox="0 0 24 24" class="w-8 h-8 text-background" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.45 14.35c-.17.28-.54.37-.82.2-2.25-1.37-5.08-1.68-8.42-.92-.32.07-.64-.13-.72-.45-.07-.32.13-.64.45-.72 3.66-.84 6.79-.48 9.31 1.06.29.17.37.54.2.83zm1.17-2.6c-.22.35-.68.46-1.03.25-2.58-1.58-6.51-2.04-9.56-1.12-.39.12-.8-.1-.92-.49-.12-.39.1-.8.49-.92 3.48-1.05 7.81-.54 10.77 1.27.35.22.46.67.25 1.01zm.1-2.72C14.63 9.2 9.52 9.03 6.58 9.93c-.47.14-.96-.12-1.1-.59-.14-.47.12-.96.59-1.1 3.37-1.02 9.01-.82 12.55 1.28.42.25.56.79.31 1.21-.25.42-.79.56-1.21.3z"/></svg>
+          </span>
+          <div><div class="text-bone text-xl font-semibold group-hover:text-ember transition-colors">Spotify</div><div class="text-mono text-muted-foreground mt-2">Tracks ↗</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-border py-10 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-4 text-mono text-muted-foreground">
+    <span>© 2026 Juan Crovatto · All rights reserved</span>
+    <span>Designed in the dark · BPM 128</span>
+  </div>
+</footer>
+
+<script>
+  // Marquee
+  const words = ["Percussive","Tech House","Tribal","Acid","Raw","Underground","4AM","808"];
+  const loop = [...words,...words,...words,...words];
+  document.getElementById('marquee').innerHTML = loop.map(w =>
+    `<span class="text-display text-bone/80" style="font-size:clamp(2rem,5vw,4rem)">${w}<span class="text-ember mx-12">✺</span></span>`
+  ).join('');
+
+  // Releases
+  const releases = [
+    { id:"01", title:"Tambor", label:"Subterránea Rec.", year:"2026", len:"6:42" },
+    { id:"02", title:"Madera EP", label:"Crovatto Audio", year:"2025", len:"21:08" },
+    { id:"03", title:"Cuero & Acero", label:"Hot Mass", year:"2025", len:"7:14" },
+    { id:"04", title:"Brasa", label:"Solid Grooves", year:"2024", len:"6:55" },
+    { id:"05", title:"Ritual 4AM", label:"Toolroom Trax", year:"2024", len:"7:48" },
+  ];
+  document.getElementById('releases').innerHTML = releases.map(r => `
+    <a href="https://soundcloud.com/juanmtcrovatto" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-5 border-b border-border last:border-b-0 hover:bg-secondary/50 transition-colors group">
+      <div class="flex items-center gap-6">
+        <span class="text-mono text-muted-foreground w-8">${r.id}</span>
+        <div>
+          <div class="text-bone font-medium group-hover:text-ember transition-colors">${r.title}</div>
+          <div class="text-mono text-muted-foreground text-sm mt-0.5">${r.label} · ${r.year}</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="text-mono text-muted-foreground hidden sm:block">${r.len}</span>
+        <span class="text-ember opacity-0 group-hover:opacity-100 transition-opacity">▶</span>
+      </div>
+    </a>`).join('');
+
+  // Shows
+  const shows = [
+    { date:"12·07", city:"Buenos Aires", venue:"Crobar", status:"On Sale" },
+    { date:"26·07", city:"Madrid", venue:"Mondo Disko", status:"On Sale" },
+    { date:"09·08", city:"Berlin", venue:"Ritter Butzke", status:"Few Left" },
+    { date:"23·08", city:"Tulum", venue:"Bonbonniere", status:"Sold Out" },
+    { date:"06·09", city:"Lisbon", venue:"Lux Frágil", status:"On Sale" },
+    { date:"20·09", city:"Amsterdam", venue:"Shelter", status:"Announce" },
+  ];
+  document.getElementById('shows-grid').innerHTML = shows.map(s => {
+    const cls = s.status === "Sold Out" ? "border-bone/20 text-muted-foreground line-through"
+      : s.status === "Few Left" ? "border-ember text-ember pulse-ember"
+      : "border-bone/40 text-bone hover:bg-ember hover:text-primary-foreground hover:border-ember";
+    return `
+      <div class="bg-background p-8 flex items-center justify-between gap-6 hover:bg-card transition-colors">
+        <div class="flex items-center gap-8">
+          <span class="text-display text-ember text-4xl md:text-5xl">${s.date}</span>
+          <div>
+            <div class="text-bone text-xl font-semibold">${s.city}</div>
+            <div class="text-mono text-muted-foreground mt-1">${s.venue}</div>
+          </div>
+        </div>
+        <span class="text-mono px-3 py-2 border ${cls} transition-colors whitespace-nowrap">${s.status}</span>
+      </div>`;
+  }).join('');
+</script>
+<script>
+const bioToggle=document.getElementById('bio-toggle');
+const bioMore=document.getElementById('bio-more');
+if(bioToggle&&bioMore){
+  bioToggle.addEventListener('click',()=>{
+    const isHidden=bioMore.classList.toggle('hidden');
+    bioToggle.textContent=isHidden?'Mostrar más +':'Mostrar menos −';
+  });
+}
+</script>
+<script>
+const bioSlides=document.querySelectorAll('#bio-slideshow .bio-slide');
+if(bioSlides.length>1){
+  let currentBio=0;
+  setInterval(()=>{
+    bioSlides[currentBio].classList.add('opacity-0');
+    currentBio=(currentBio+1)%bioSlides.length;
+    bioSlides[currentBio].classList.remove('opacity-0');
+  },4000);
+}
+
+const heroSlides=document.querySelectorAll('#hero-slideshow .hero-slide');
+if(heroSlides.length>1){
+  let currentHero=0;
+  setInterval(()=>{
+    heroSlides[currentHero].classList.add('opacity-0');
+    currentHero=(currentHero+1)%heroSlides.length;
+    heroSlides[currentHero].classList.remove('opacity-0');
+  },4500);
+}
+</script></body>
+</html>
