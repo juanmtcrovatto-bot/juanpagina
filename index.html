@@ -80,15 +80,44 @@
 
 
   @media (max-width: 767px) {
-    .hero-slide-red {
+    .hero-slide-red img {
       object-position: 52% center;
     }
   }
 
   @media (max-width: 480px) {
-    .hero-slide-red {
+    .hero-slide-red img {
       object-position: 50% center;
     }
+  }
+
+
+  /* Fix: asegurar que el hero cubra todo el ancho del viewport */
+  #top {
+    width: 100%;
+    overflow: hidden;
+  }
+  #hero-slideshow {
+    position: absolute;
+    inset: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    min-width: 100vw;
+    height: 100%;
+    overflow: hidden;
+  }
+  #hero-slideshow .hero-slide {
+    width: 100vw !important;
+    min-width: 100vw;
+    height: 100%;
+  }
+  #hero-slideshow .hero-slide img,
+  #hero-slideshow > img.hero-slide {
+    width: 100vw !important;
+    min-width: 100vw;
+    height: 100%;
+    object-fit: cover;
   }
 
 </style>
@@ -116,7 +145,10 @@
   <div id="hero-slideshow" class="absolute inset-0">
     <img src="images/juan-hero.jpg" alt="Juan Crovatto — Percussive Tech House DJ & Producer" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-top opacity-70" />
     <img src="images/hero-slide2.jpg" alt="" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" />
-    <img src="images/hero-slide3.jpg" alt="" width="1600" height="1280" class="hero-slide hero-slide-red absolute inset-0 w-full h-full object-cover object-center opacity-0" />
+    <picture class="hero-slide hero-slide-red absolute inset-0 w-full h-full opacity-0">
+      <source media="(min-width: 768px)" srcset="images/hero-slide3-desktop.jpg" />
+      <img src="images/hero-slide3.jpg" alt="" width="1600" height="1280" />
+    </picture>
   </div>
   <div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background"></div>
   <div class="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent"></div>
