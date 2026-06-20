@@ -144,7 +144,10 @@
 <section id="top" class="relative min-h-screen w-full grain overflow-hidden">
   <div id="hero-slideshow" class="absolute inset-0">
     <img src="images/juan-hero.jpg" alt="Juan Crovatto — Percussive Tech House DJ & Producer" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-top opacity-70" />
-    <img src="images/hero-slide2.jpg" alt="" width="1600" height="1280" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" />
+    <picture class="hero-slide absolute inset-0 w-full h-full opacity-0">
+      <source media="(min-width: 768px)" srcset="images/hero-slide2-desktop.jpg" />
+      <img src="images/hero-slide2.jpg" alt="" width="1600" height="1280" class="object-center" />
+    </picture>
     <picture class="hero-slide hero-slide-red absolute inset-0 w-full h-full opacity-0">
       <source media="(min-width: 768px)" srcset="images/hero-slide3-desktop.jpg" />
       <img src="images/hero-slide3.jpg" alt="" width="1600" height="1280" />
@@ -184,6 +187,7 @@
   <img src="images/bio-slide1.jpg" class="bio-slide absolute inset-0 w-full h-full object-cover" />
   <img src="images/bio-slide2.png" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
   <img src="images/bio-slide3.jpg" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
+  <img src="images/bio-slide4.jpg" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
 </div>
 
     </div>
