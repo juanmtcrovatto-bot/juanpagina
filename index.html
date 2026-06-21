@@ -120,15 +120,57 @@
     object-fit: cover;
   }
 
+
+  .ui-inline-icon{
+    width:1.05rem;
+    height:1.05rem;
+    object-fit:contain;
+    display:inline-block;
+    flex:0 0 auto;
+  }
+  .ui-inline-icon--sm{
+    width:1rem;
+    height:1rem;
+  }
+
+
+  .site-brand-logo{
+    display:block;
+    width:auto;
+    height:26px;
+    object-fit:contain;
+  }
+  @media (min-width: 768px){
+    .site-brand-logo{
+      height:30px;
+    }
+  }
+
+
+  .hero-genre{
+    display:inline-block;
+    transition:opacity .35s ease, transform .35s ease, filter .35s ease;
+  }
+  .hero-genre.is-changing{
+    opacity:0;
+    transform:translateY(6px);
+    filter:blur(3px);
+  }
+  .hero-intro-more.hidden{
+    display:none;
+  }
+  .support-name{
+    color: var(--ember);
+  }
+
 </style>
 </head>
 <body class="bg-background text-foreground overflow-x-hidden">
 
 <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-border">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-ember pulse-ember"></span>
-      <span class="text-mono text-bone">JC / Crovatto</span>
+    <a href="#top" class="flex items-center">
+      <img src="images/hero-logo.png" alt="Juan Crovatto" class="site-brand-logo" />
     </a>
     <nav class="hidden md:flex items-center gap-8 text-mono text-muted-foreground">
       <a href="#bio" class="hover:text-ember transition-colors">01 · Bio</a>
@@ -137,7 +179,10 @@
       <a href="#contact" class="hover:text-ember transition-colors">04 · Contacto</a>
       <a href="#social" class="hover:text-ember transition-colors">05 · Social</a>
     </nav>
-    <a href="#contact" class="text-mono px-4 py-2 bg-ember text-primary-foreground hover:bg-ember-glow transition-colors">Booking →</a>
+    <a href="https://wa.me/5493489622126?text=Hola%20Juan%20Crovatto%2C%20quiero%20consultar%20por%20booking." target="_blank" rel="noopener noreferrer" class="text-mono px-4 py-2 bg-ember text-primary-foreground hover:bg-ember-glow transition-colors inline-flex items-center gap-2">
+      <img src="images/whatsapp-icon.png" alt="" class="ui-inline-icon ui-inline-icon--sm" />
+      <span>WhatsApp Booking →</span>
+    </a>
   </div>
 </header>
 
@@ -166,13 +211,23 @@
       <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ember pulse-ember"></span> On Tour 2026</span>
     </div>
     <div class="hero-copy-fade max-w-4xl -ml-4 md:-ml-10 lg:-ml-20 xl:-ml-28">
-      <p class="text-mono text-ember mb-6">// Percussive Tech House</p>
+      <p class="text-mono text-ember mb-6">// <span id="hero-genre" class="hero-genre">Percussive Tech House</span></p>
       <img src="images/hero-logo.png" alt="Juan Crovatto" class="w-[82%] max-w-[720px] lg:max-w-[820px] xl:max-w-[880px] h-auto drop-shadow-[0_0_30px_rgba(255,106,26,0.18)]" />
-      <p class="mt-7 max-w-lg text-base text-muted-foreground leading-relaxed">Tambores, ácidos y un kick que no perdona. Sets para piso oscuro, soundsystems gordos y sesiones que terminan cuando sale el sol.</p>
+      <div class="mt-7 max-w-lg text-base text-muted-foreground leading-relaxed">
+        <p>DJ productor oriundo de <span class="text-bone">Campana, Buenos Aires</span>. Tras pocos años de haber ingresado en el mundo de la música, <span class="text-bone">Juan Martín Crovatto</span> supo ganarse su lugar.</p>
+        <div id="hero-intro-more" class="hero-intro-more hidden mt-4 space-y-4">
+          <p>Recibió supports tras haber compartido cabina con algunos de los mejores artistas del mundo.</p>
+          <p>Sus artistas inspiracionales son <span class="text-bone">Marco Carola</span>, <span class="text-bone">Michael Bibi</span>, <span class="text-bone">Franky Rizardo</span> y <span class="text-bone">Tomi & Kesh</span>.</p>
+        </div>
+        <button id="hero-intro-toggle" type="button" class="text-mono inline-flex items-center justify-center px-5 py-3 bg-ember text-primary-foreground hover:bg-ember-glow transition-colors shadow-ember mt-5">Leer más +</button>
+      </div>
       <div class="mt-10 flex flex-wrap gap-4">
         <a href="#music" class="text-mono px-6 py-4 bg-ember text-primary-foreground hover:bg-ember-glow transition-colors shadow-ember">▶ Escuchar último set</a>
         <a href="#shows" class="text-mono px-6 py-4 border border-bone/30 text-bone hover:border-ember hover:text-ember transition-colors">Próximas fechas →</a>
-        <a href="https://instagram.com/juancrovatto" target="_blank" rel="noopener noreferrer" class="text-mono px-6 py-4 border border-bone/30 text-bone hover:border-ember hover:text-ember transition-colors inline-flex items-center gap-2">@juancrovatto</a>
+        <a href="https://instagram.com/juancrovatto" target="_blank" rel="noopener noreferrer" class="text-mono px-6 py-4 border border-bone/30 text-bone hover:border-ember hover:text-ember transition-colors inline-flex items-center gap-2">
+          <img src="images/instagram-icon.png" alt="" class="ui-inline-icon" />
+          <span>@juancrovatto</span>
+        </a>
       </div>
     </div>
   </div>
@@ -192,6 +247,10 @@
   <img src="images/bio-slide2.png" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
   <img src="images/bio-slide3.jpg" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
   <img src="images/bio-slide4.jpg" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
+  <img src="images/bio-slide5.png" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
+  <img src="images/bio-slide6.png" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
+  <img src="images/bio-slide7.png" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
+  <img src="images/bio-slide8.png" class="bio-slide absolute inset-0 w-full h-full object-cover opacity-0" />
 </div>
 
     </div>
@@ -201,8 +260,8 @@
         <p>Formado en <span class="text-bone">BPM Academy</span> y <span class="text-bone">La Juanita Studio</span>, Juan Crovatto consolidó su carrera presentándose en algunos de los clubes más destacados de la escena: Crobar, Club América, Moscú (ex Pacha), Morocco Main, Zegre, Piso 3, Galería, Caix y Groove.</p>
         <p>Es DJ residente en <span class="text-bone">Lignée</span> y también se presentó en Roomie (Mar del Plata). Su trayectoria lo llevó además a Brasil, donde tocó en P12 y Jurerê Internacional.</p>
         <div id="bio-more" class="hidden space-y-5">
-          <p>Participó en eventos de renombre como La Feria, La Playa, We Can y Dikey, y compartió cabina con referentes internacionales como Stefano Noferini, Héctor Couto, Bizza, Omar Svenson, Bruno Bona y Freenzy Music, además de destacados artistas nacionales como Muter, Silvestre, Franco BA, Super, Juan AR, Pinco y muchos otros.</p>
-          <p>Sus producciones recibieron el apoyo de grandes artistas internacionales como Yaya Tamango, Tomi Kesh, Dennis Cruz, Kidoo, Nacho Scoppa, Chapa Castelo, Waff, Freenzy Music, Tomás Bisquierra y Jay de Lys.</p>
+          <p>Participó en eventos de renombre como La Feria, La Playa, We Can y Dikey, y compartió cabina con referentes internacionales como <span class="support-name">Stefano Noferini</span>, <span class="support-name">Héctor Couto</span>, <span class="support-name">Bizza</span>, <span class="support-name">Omar Svenson</span>, <span class="support-name">Bruno Bona</span> y <span class="support-name">Freenzy Music</span>, además de destacados artistas nacionales como <span class="support-name">Muter</span>, <span class="support-name">Silvestre</span>, <span class="support-name">Franco BA</span>, <span class="support-name">Super</span>, <span class="support-name">Juan AR</span>, <span class="support-name">Pinco</span> y muchos otros.</p>
+          <p>Sus producciones recibieron el apoyo de grandes artistas internacionales como <span class="support-name">Yaya Tamango</span>, <span class="support-name">Tomi Kesh</span>, <span class="support-name">Dennis Cruz</span>, <span class="support-name">Kidoo</span>, <span class="support-name">Nacho Scoppa</span>, <span class="support-name">Chapa Castelo</span>, <span class="support-name">Waff</span>, <span class="support-name">Freenzy Music</span>, <span class="support-name">Tomás Bisquierra</span> y <span class="support-name">Jay de Lys</span>.</p>
         </div>
         <button id="bio-toggle" type="button" class="text-mono inline-flex items-center justify-center px-5 py-3 bg-ember text-primary-foreground hover:bg-ember-glow transition-colors shadow-ember mt-2">Mostrar más +</button>
       </div>
@@ -242,10 +301,22 @@
       <h2 class="text-display text-bone mt-4" style="font-size:clamp(2.5rem,6vw,5rem)">Próximas <span class="text-ember">fechas</span></h2>
     </div>
     <div class="mb-20">
-      <div class="text-mono text-muted-foreground mb-4">Destacado — Studio Crobar x Elite Aniversario</div>
-      <div class="relative border border-border overflow-hidden">
-        <img src="images/flyer-crobar-elite.jpg" alt="Flyer Studio Crobar x Elite Aniversario — Max Ross B2B Juan Crovatto, 04.ABR.2026 en Crobar Club Buenos Aires" loading="lazy" class="w-full max-h-[70vh] object-contain bg-black/40" />
-        <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none"></div>
+      <div class="text-mono text-muted-foreground mb-4">Destacados</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="text-mono text-muted-foreground mb-3">Max Ross B2B Juan Crovatto</div>
+          <div class="relative border border-border overflow-hidden">
+            <img src="images/flyer-crobar-elite.jpg" alt="Flyer Studio Crobar x Elite Aniversario — Max Ross B2B Juan Crovatto, 04.ABR.2026 en Crobar Club Buenos Aires" loading="lazy" class="w-full max-h-[70vh] object-contain bg-black/40" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+        <div>
+          <div class="text-mono text-muted-foreground mb-3">Juan Crovatto B2B Matt (AR) — Studio Crobar x Elite</div>
+          <div class="relative border border-border overflow-hidden">
+            <img src="images/featured-crobar-matt.jpg" alt="Flyer Studio Crobar x Elite — Juan Crovatto B2B Matt (AR)" loading="lazy" class="w-full max-h-[70vh] object-contain bg-black/40" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="grid md:grid-cols-2 gap-px bg-border" id="shows-grid"></div>
@@ -260,8 +331,11 @@
       <p class="mt-8 max-w-2xl text-muted-foreground text-lg">Booking, rider técnico, hospitality y datos oficiales para contratar a Juan Crovatto.</p>
 
       <div class="mt-12 grid md:grid-cols-2 gap-px bg-border">
-        <a href="tel:+5493489622126" class="bg-background p-6 flex flex-col gap-2 hover:bg-secondary transition-colors group">
-          <span class="text-mono text-muted-foreground">Booking</span>
+        <a href="https://wa.me/5493489622126?text=Hola%20Juan%20Crovatto%2C%20quiero%20consultar%20por%20booking." target="_blank" rel="noopener noreferrer" class="bg-background p-6 flex flex-col gap-2 hover:bg-secondary transition-colors group">
+          <span class="text-mono text-muted-foreground inline-flex items-center gap-2">
+            <img src="images/whatsapp-icon.png" alt="" class="ui-inline-icon ui-inline-icon--sm" />
+            <span>WhatsApp Booking</span>
+          </span>
           <span class="text-bone text-xl group-hover:text-ember transition-colors">+54 9 3489 62 2126 →</span>
         </a>
         <a href="mailto:juanmtcrovatto@gmail.com" class="bg-background p-6 flex flex-col gap-2 hover:bg-secondary transition-colors group">
@@ -447,6 +521,31 @@ if(bioToggle&&bioMore){
     const isHidden=bioMore.classList.toggle('hidden');
     bioToggle.textContent=isHidden?'Mostrar más +':'Mostrar menos −';
   });
+}
+</script>
+<script>
+const heroIntroToggle=document.getElementById('hero-intro-toggle');
+const heroIntroMore=document.getElementById('hero-intro-more');
+if(heroIntroToggle&&heroIntroMore){
+  heroIntroToggle.addEventListener('click',()=>{
+    const isHidden=heroIntroMore.classList.toggle('hidden');
+    heroIntroToggle.textContent=isHidden?'Leer más +':'Leer menos −';
+  });
+}
+</script>
+<script>
+const heroGenre=document.getElementById('hero-genre');
+const heroGenres=['Percussive Tech House','Minimal Deep Tech'];
+if(heroGenre){
+  let currentGenre=0;
+  setInterval(()=>{
+    heroGenre.classList.add('is-changing');
+    setTimeout(()=>{
+      currentGenre=(currentGenre+1)%heroGenres.length;
+      heroGenre.textContent=heroGenres[currentGenre];
+      heroGenre.classList.remove('is-changing');
+    },180);
+  },3200);
 }
 </script>
 <script>
